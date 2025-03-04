@@ -1,7 +1,7 @@
 workflows:
   web-workflow:
     name: Web App Workflow
-    instance_type: mac-mini-m1
+    instance_type: mac_mini_m1
     environment:
       node: 20.11.1
       xcode: latest
