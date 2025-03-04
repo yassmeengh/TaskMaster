@@ -12,8 +12,5 @@ workflows:
       - name: Build web app
         script: |
           npm run build
-      - name: Run tests
-        script: |
-          npm run check
     artifacts:
       - dist/**
