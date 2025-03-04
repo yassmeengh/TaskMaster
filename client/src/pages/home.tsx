@@ -116,7 +116,7 @@ export default function Home() {
 
         <Tabs
           value={filter}
-          onValueChange={(value: Filter) => setFilter(value)}
+          onValueChange={(value: string) => setFilter(value as Filter)}
           className="mt-6"
         >
           <TabsList className="grid w-full grid-cols-3">

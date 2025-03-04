@@ -22,7 +22,11 @@ export class MemStorage implements IStorage {
 
   async createTodo(insertTodo: InsertTodo): Promise<Todo> {
     const id = this.currentId++;
-    const todo: Todo = { ...insertTodo, id };
+    const todo: Todo = {
+      id,
+      text: insertTodo.text,
+      completed: insertTodo.completed ?? false
+    };
     this.todos.set(id, todo);
     return todo;
   }
@@ -32,7 +36,11 @@ export class MemStorage implements IStorage {
     if (!existing) {
       throw new Error(`Todo with id ${id} not found`);
     }
-    const updated = { ...existing, ...updates };
+    const updated = { 
+      ...existing,
+      ...updates,
+      completed: updates.completed ?? existing.completed
+    };
     this.todos.set(id, updated);
     return updated;
   }
