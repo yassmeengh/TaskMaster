@@ -1,9 +1,10 @@
 workflows:
   web-workflow:
     name: Web App Workflow
-    instance_type: linux
+    instance_type: mac-mini-m1
     environment:
       node: 20.11.1
+      xcode: latest
     scripts:
       - name: Install dependencies
         script: |
