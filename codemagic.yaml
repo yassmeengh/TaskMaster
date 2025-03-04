@@ -1,0 +1,18 @@
+workflows:
+  web-workflow:
+    name: Web App Workflow
+    instance_type: linux
+    environment:
+      node: 20.11.1
+    scripts:
+      - name: Install dependencies
+        script: |
+          npm install
+      - name: Build web app
+        script: |
+          npm run build
+      - name: Run tests
+        script: |
+          npm run check
+    artifacts:
+      - dist/**
